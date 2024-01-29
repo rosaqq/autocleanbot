@@ -1,0 +1,5 @@
+secret.json
+*.log
+.idea
+bot_vars.pickle
+__pycache__/
