@@ -22,6 +22,9 @@ Requires a secret.json file locally - example:
   "admins": [
     112,
     113
+  ],
+  "bot_triggers": [
+    ".", "!", "-"
   ]
 }
 ```
