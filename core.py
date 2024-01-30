@@ -38,6 +38,10 @@ def load():
 # Utility functions
 # ----------------------------------------------------------------------------------------------------------------------
 def parse_id_set(args):
+
+    if not args:
+        raise Exception('you must specify at least one user id')
+
     return {int(x) for x in args}
 
 
@@ -60,8 +64,6 @@ async def cc_start(message, args: set):
 
 async def cc_stop(message, args: set):
     """Toggle off auto clean"""
-    if not args:
-        raise Exception('you must specify at least one user id')
     bot_vars['autoclean_user_ids'] = bot_vars['autoclean_user_ids'] - args
     await message.channel.send('Disabled auto clean for `' + ', '.join(args) + '`')
 
